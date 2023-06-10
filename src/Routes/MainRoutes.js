@@ -7,9 +7,6 @@ import CreatePost from '../Pages/CreatePost'
 import ViewPost from '../Pages/ViewPost'
 import ViewMore from '../Pages/ViewMore'
 
-
-
-
 function MainRoutes() {
     return (
        <Router>

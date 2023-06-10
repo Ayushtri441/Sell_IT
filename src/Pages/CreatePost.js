@@ -1,5 +1,5 @@
 import React, { Fragment, useContext } from "react";
-import Create from "../Components/Create/Create";
+import Form from "../Components/Create/form";
 import { AuthContext } from "../contextStore/AuthContext";
 import Login from "../Components/Login/Login";
 
@@ -8,11 +8,13 @@ const CreatePage = () => {
 
   return (
     <Fragment>
+      {console.log(user+" ")}
       {user ? (
-        <Create />
+        <Form />
       ) : (
         <>          
-          {alert("You must login first")} <Login />
+        
+          { alert("You must login first")} <Login />
         </>
       )}
     </Fragment>

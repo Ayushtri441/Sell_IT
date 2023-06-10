@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+body{
+    background-color: #a8b1ec;
+    box-sizing: border-box;
+    left: 0%;
+    right: 0%;
+    font-family: 'Poppins', sans-serif;
+    align-items: center;
+}
+span{
+    color: red;
+   
+}
+h2{
+    padding-top: 20px;
+}
+.container{
+    box-sizing: border-box;
+    width: 780px;
+    height: auto;
+   align-items: center;
+    background-color: white;
+    margin-top: 10px;
+    margin-bottom: 100px;
+    
+}
+.form{
+    margin-top: 10px;
+    margin-left: 170px;
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 800px;
+    padding: 40px;
+}
+.b{
+    width: 130px;
+    height: 40px;
+    background-color: white;
+    color: #6976cb;
+    border: 2px solid #6976cb;
+    border-radius: 10px;
+    
+    
+    
+}
+.b:hover{
+    box-shadow: 5px 5px  #6976cb;
+    border: 2px solid  #a8b1ec;
+}
+/* drag and drop */
+#drop-area1 ,#drop-area2 ,#drop-area3 {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+  }
+  #drop-area p {
+    margin: 0;
+  }
+  #drop-area.highlight {
+    background-color: #E9E9E9;
+  }
+  .upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+  }
+.upload-btn-wrapper input[type=file] {
+    position: absolute;
+    left: 30;
+    top: 50;
+  
+    opacity: 0;
+  }
+  #bdUserUploadIcon {
+    width: 12px;
+    height: 12px;
+   
+}
+  .bdUserUploadIconBtn {
+    width: 37px;
+    height: 34px;
+    border: none;
+    border-radius: 4px;
+   
+    margin: 0 -5px 25px 0;
+}
+#choose{
+    display: none;
+}
+
+.bo1{
+  
+position: relative;
+width: 799px;
+height: 0px;
+margin: 0px -40px;
+
+border: 1px solid #c1bdbd;
+ 
+
+}
+
+/* Grid Main */
+.gridmain{
+  display: flex;
+  flex-wrap: wrap;
+ 
+}
+.grid {
+  flex: 33.33%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.bdUserUploadIconBtn {
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 4px;
+}
+
+.bdUserUploadIconBtn:hover {
+  background-color: #0056b3;
+}
+
+.upload-btn-wrapper input[type="file"] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+#change1,
+#change2,
+#change3 {
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+#change1 i,
+#change2 i,
+#change3 i {
+  color: #000000;
+}

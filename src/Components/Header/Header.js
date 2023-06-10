@@ -3,6 +3,7 @@ import { useHistory } from "react-router";
 import { AllPostContext } from "../../contextStore/AllPostContext";
 import { PostContext } from "../../contextStore/PostContext";
 import "./Header.css";
+
 import OlxLogo from "../../assets/OlxLogo";
 import SearchIcon from "../../assets/SearchIcon"
 import Arrow from "../../assets/Arrow";
@@ -116,7 +117,7 @@ function Header() {
           </div>
         </Link>
       </div>
-    </div>
+    </div>    
   );
 }
 

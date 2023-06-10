@@ -5,7 +5,7 @@ import { Firebase } from "../../firebase/config";
 import { AuthContext } from "../../contextStore/AuthContext";
 import { useHistory } from "react-router";
 import GoLoading from "../Loading/GoLoading";
-const Create = () => {
+const X = () => {
   const { user } = useContext(AuthContext);
   const history = useHistory();
   let [name, setName] = useState("");
@@ -17,6 +17,7 @@ const Create = () => {
   const handleSubmit = () => {
     setLoading(true);
     let date = new Date().toDateString();
+    // console.log(image)
     Firebase.storage()
       .ref(`/image/${image.name}`)
       .put(image)
@@ -70,6 +71,7 @@ const Create = () => {
           <option value="Mobile Phones">Mobile Phones</option>
           <option value="Motorcycles">Motorcycles</option>
           <option value="Tablets">Tablets</option>
+       
         </select>
         <br />
         <label>Price</label>
@@ -81,6 +83,7 @@ const Create = () => {
           value={price}
           onChange={(e) => {
             setPrice(e.target.value);
+            
           }}
         />
         <br />
@@ -102,6 +105,7 @@ const Create = () => {
           alt="Posts"
           width="200px"
           height="200px"
+          
           src={image ? URL.createObjectURL(image) : ""}
         ></img>
 
@@ -121,4 +125,4 @@ const Create = () => {
   );
 };
 
-export default Create;
+export default X;
