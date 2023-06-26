@@ -17,7 +17,7 @@ function PostCards({product,index}) {
           <Heart></Heart>
         </div>
         <div className="image">
-          <img src={product.url} alt="" />
+          <img src={product.imageUrls[0]} alt="" />
         </div>
         <div className="content">
           <p className="rate">&#x20B9; {product.price}</p>

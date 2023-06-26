@@ -8,7 +8,7 @@ import { Firebase } from "../../firebase/config";
 import { AuthContext } from "../../contextStore/AuthContext";
 import { useHistory } from "react-router";
 import GoLoading from "../Loading/GoLoading";
-const Form = () => {
+const FormCar = () => {
   //Upload items
   const { user } = useContext(AuthContext);
   const history = useHistory();
@@ -227,7 +227,7 @@ const Form = () => {
                     <input
                       className="form-check-input"
                       type="radio"
-                      name="gridRadios"
+                      name="gridRadiosf"
                       id={`gridRadios-${option}`}
                       value={option}
                       checked={fuel === option}
@@ -244,7 +244,6 @@ const Form = () => {
               </div>
             </fieldset>
           </div>
-
           <div className="transmisson">
             <fieldset className="row mb-3 mt-4">
               <legend className="col-form-label pt-0">
@@ -257,7 +256,7 @@ const Form = () => {
                     <input
                       className="form-check-input"
                       type="radio"
-                      name="gridRadios"
+                      name="gridRadiost"
                       id={`gridRadiostrans-${option}`}
                       value={option}
                       checked={trans === option}
@@ -274,6 +273,7 @@ const Form = () => {
               </div>
             </fieldset>
           </div>
+         
           <div className="row g-3">
             <label htmlFor="title" className="form-label m-0">
               Ad Title <span>*</span>
@@ -290,6 +290,7 @@ const Form = () => {
               />
             </div>
           </div>
+          
           <div className="row g-3">
             <label htmlFor="Description" className="form-label m-0">
               Ad Description <span>*</span>
@@ -496,4 +497,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default FormCar;

@@ -6,7 +6,12 @@ import Login from '../Pages/Login'
 import CreatePost from '../Pages/CreatePost'
 import ViewPost from '../Pages/ViewPost'
 import ViewMore from '../Pages/ViewMore'
-
+import FormCar from '../Components/Create/form'
+import FormBike from '../Components/Create/FormBike'
+import FormCamera from '../Components/Create/FormCamera'
+import FormMobile from '../Components/Create/FormMobile'
+import FormLaptop from '../Components/Create/FormLaptop'
+import FormTablet from '../Components/Create/FormTablet'
 function MainRoutes() {
     return (
        <Router>
@@ -28,10 +33,26 @@ function MainRoutes() {
            <Route path="/viewmore">
                <ViewMore/>
            </Route>
-         
-           
-
-           
+           <Route path="/Car">
+               <FormCar/>
+           </Route> 
+           <Route path="/Bike">
+               <FormBike/>
+           </Route>
+           <Route path="/Mobile">
+               <FormMobile/>
+           </Route>
+           <Route path="/LapTop">
+               <FormLaptop/>
+           </Route>
+           <Route path="/Bike">
+               <FormBike/>
+           </Route>
+           <Route path="/Camera">
+               <FormCamera/>
+           </Route> <Route path="/Tablet">
+               <FormTablet/>
+           </Route>
        </Router>
     )
 }

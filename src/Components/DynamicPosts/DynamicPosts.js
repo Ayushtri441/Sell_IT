@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 
 function DynamicPosts({category}) {
     
-    const {allPost}=useContext(AllPostContext)
+    const {allPost}= useContext(AllPostContext)
     let displayCards=allPost.filter((itm)=>itm.category===category).map((product,index)=>{return(
       <PostCards product={product} index={index} key={index} />
     )});

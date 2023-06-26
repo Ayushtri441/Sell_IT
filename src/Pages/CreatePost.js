@@ -1,5 +1,5 @@
 import React, { Fragment, useContext } from "react";
-import Form from "../Components/Create/form";
+import Containerform from "../Components/ContainerForm/containerform";
 import { AuthContext } from "../contextStore/AuthContext";
 import Login from "../Components/Login/Login";
 
@@ -10,7 +10,7 @@ const CreatePage = () => {
     <Fragment>
       {console.log(user+" ")}
       {user ? (
-        <Form />
+        <Containerform />
       ) : (
         <>          
         
