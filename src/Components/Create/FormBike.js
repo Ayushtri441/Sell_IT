@@ -79,7 +79,7 @@ const FormBike = () => {
       reader.readAsDataURL(file);
     };
     //brands
-    const brands = ["Choose...", "Scoda", "Mahendra", "Tata", "BMW", "Honda"];
+    const brands = ["Choose...", "Scoda", "Hero", "Tata", "BMW", "Honda"];
    
     const brandchange = (e) => {
       setbrand(e.target.value);
