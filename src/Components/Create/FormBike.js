@@ -18,8 +18,8 @@ const FormBike = () => {
       grid2: null,
       grid3: null,
     });
-    const category ="Cars";
-    const name = "Cars"
+    const category ="2 Wheller";
+    const name = "Bike"
     let [brand, setbrand] = useState("");
     let [model,setModel] = useState("");
     let [year,setYear] = useState("");
@@ -235,7 +235,7 @@ const FormBike = () => {
                       />
                       <label
                         className="form-check-label"
-                        htmlFor={`gridRadios-${option}`}
+                        htmlFor={`gridRadiosf-${option}`}
                       >
                         {option}
                       </label>
@@ -264,7 +264,7 @@ const FormBike = () => {
                       />
                       <label
                         className="form-check-label"
-                        htmlFor={`gridRadiostrans-${option}`}
+                        htmlFor={`gridRadiostranst-${option}`}
                       >
                         {option}
                       </label>

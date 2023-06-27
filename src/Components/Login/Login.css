@@ -1,45 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+
+.loginmain{
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginvedio{
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+ video{
+  position: fixed;
+  width: 100%;
+  height: 125%;
+  top: 0%; 
+  left: 0%;
+  z-index: -2;
+  opacity: 100%;
+}
+.backblack{
+  position: fixed;
+  width: 100%;
+  height: 125%;
+  top: 0%; 
+  background-color: black;
+  left: 0%;
+  z-index: -1;
+  opacity: 50%;
+}
 .loginParentDiv {
-    border: 1px solid black;
+    background-color: white;
+    border: 3px solid black;
+    opacity: 100%;
+    z-index: 10;
     width: max-content;
+    width: 30%;
+    height: 80%;
     padding: 10px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    border-radius: 10px;
   }
-  
+  .loginParentDiv svg{
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
   .loginParentDiv .input {
-    border-top-color: transparent;
-    border-left-color: transparent;
-    border-right-color: transparent;
-    outline-color: transparent;
-    
+   margin-bottom: 30px;
+   height: 40px;
+   font-size: medium;
+   padding-left: 20px;
+   border: 2px solid black;
+   background-color: white;
+   width: 300px;
+   font-family: 'Poppins', sans-serif;
+   transition: 0.3s;
   }
+  .loginParentDiv .input {
+    margin-bottom: 30px;
+    height: 40px;
+    font-size: medium;
+    background-color: white;
+    padding-left: 20px;
+    border: 2px solid black;
+    width: 300px;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.3s;
+   }
+ 
+  .loginParentDiv .input:hover {
+
+    border: 2px solid red;
+   }
+  
+  
   
   .loginParentDiv button {
     width: 100%;
     height: 48px;
-    /* border-color: transparent; */
     background-color: #002f34;
     color: whitesmoke;
     font-weight: 900;
+    transition: 0.3s;
   }
   .loginParentDiv button:hover {
-    background-color: white;
-    color: #002f34;
+    background-color: #00535d;
+    color: white;
     border: 2px solid #002f34;
   }
   
   .loginParentDiv a {
+    margin-top: 30px;
     display: flex;
+    font-size: large;
+    text-decoration: none;
+    margin-left: 240px;
     justify-content: center;
+    color: black;
     cursor: pointer;
   }
-
-  .loginParentDiv img{
-    position: top;
-    margin-bottom: 3em;
+  .loginParentDiv a:hover {
+    color: red;
+    font-weight: bold;
   }
   
   

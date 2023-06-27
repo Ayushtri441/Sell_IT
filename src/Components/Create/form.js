@@ -199,6 +199,7 @@ const FormCar = () => {
               />
             </div>
           </div>
+          
           <div className="row g-3">
             <label htmlFor="year" className="form-label m-0 ">
               Year <span>*</span>
@@ -235,7 +236,7 @@ const FormCar = () => {
                     />
                     <label
                       className="form-check-label"
-                      htmlFor={`gridRadios-${option}`}
+                      htmlFor={`gridRadiosf-${option}`}
                     >
                       {option}
                     </label>
@@ -264,7 +265,7 @@ const FormCar = () => {
                     />
                     <label
                       className="form-check-label"
-                      htmlFor={`gridRadiostrans-${option}`}
+                      htmlFor={`gridRadiostranst-${option}`}
                     >
                       {option}
                     </label>

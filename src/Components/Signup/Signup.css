@@ -1,39 +1,123 @@
-.signupParentDiv {
-    border: 1px solid black;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+
+.signupmain{
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  display: flex;
+  width: 100%;
+  margin-top: 50px;
+  justify-content: center;
+  align-items: center;
+  
+
+  
+}
+
+.loginvedio{
+  top: 0%;
+  left: 0%;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+ video{
+  position: fixed;
+  width: 100%;
+  height: 125%;
+  top: 0%; 
+  left: 0%;
+  z-index: -2;
+  opacity: 100%;
+}
+.backblack{
+  position: fixed;
+  width: 100%;
+  height: 125%;
+  top: 0%; 
+  background-color: black;
+  left: 0%;
+  z-index: -1;
+  opacity: 50%;
+}
+.signUpParentDiv {
+    background-color: white;
+    border: 3px solid black;
+    opacity: 100%;
+    z-index: 10;
     width: max-content;
-    padding: 10px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 6px;
+    width: 30%;
+    height: 80%;
+    padding-bottom:20px ;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-items: start;
+    align-items: center;
+    border-radius: 10px;
   }
-  
-  .signupParentDiv .input {
-    border-top-color: transparent;
-    border-left-color: transparent;
-    border-right-color: transparent;
-    outline-color: transparent;
-    background-color:transparent;
+  .signUpParentDiv svg{
+    margin-top: 0px;
+    margin-bottom: 10px;
   }
+  .signUpParentDiv .input {
+   margin-bottom: 30px;
+   height: 40px;
+   font-size: medium;
+   padding-left: 20px;
+   border: 2px solid black;
+   background-color: white;
+   width: 300px;
+   font-family: 'Poppins', sans-serif;
+   transition: 0.3s;
+  }
+  .signUpParentDiv .input {
+    margin-bottom: 20px;
+    height: 40px;
+    font-size: medium;
+    background-color: white;
+    padding-left: 20px;
+    border: 2px solid black;
+    width: 300px;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.3s;
+   }
+ 
+  .signUpParentDiv .input:hover {
+
+    border: 2px solid red;
+   }
   
-  .signupParentDiv button {
+  
+  
+  .signUpParentDiv button {
     width: 100%;
     height: 48px;
-    /* border-color: transparent; */
     background-color: #002f34;
     color: whitesmoke;
     font-weight: 900;
+    transition: 0.3s;
   }
-  .signupParentDiv button:hover {
-    background-color: white;
-    color: #002f34;
+  .signUpParentDiv button:hover {
+    background-color: #00535d;
+    color: white;
     border: 2px solid #002f34;
   }
   
-  .signupParentDiv a {
+  .signUpParentDiv a {
+    margin-top: 30px;
     display: flex;
+    font-size: large;
+    text-decoration: none;
+    margin-left: 240px;
     justify-content: center;
+    color: black;
     cursor: pointer;
   }
+  .signUpParentDiv a:hover {
+    color: red;
+    font-weight: bold;
+  }
+  
   

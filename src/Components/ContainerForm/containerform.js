@@ -23,7 +23,7 @@ function Containerform() {
     { icon: "fa-mobile", name: "Mobiles", component: "/Mobile" ,one:"Moblie" , two:"Tablet"},
     { icon: "fa-camera-retro", name: "Camera & Lenses", component: "/Camera",one:"Camera" , two:"Lenses" },
     { icon: "fa-laptop", name: "Laptops and Computers", component: "/Laptop",one:"Laptops" , two:"Computers" },
-    { icon: "fa-tablet", name: "Tablets", component: "/Tablet",one:"Moblie" , two:"new",one:"Moblie" , two:"Tablet" },
+    { icon: "fa-tablet", name: "Others", component: "/Tablet",one:"Other"},
   ];
 
   return (
