@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {useHistory} from "react-router-dom";
 import { Firebase } from "../../firebase/config";
-import Logo from "../../assets/OlxLogo";
 import RoundLoading from "../Loading/RoundLoading";
 import "./Login.css";
 import video from '../../assets/video/mixkit-checking-an-item-on-a-sales-site-on-a-cell-42123-medium.mp4'

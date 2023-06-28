@@ -7,7 +7,7 @@ const ImageCarousel = ({ images }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide === images.length - 1 ? 0 : prevSlide + 1));
-    }, 3000); 
+    }, 5000); 
 
     return () => {
       clearInterval(interval);
@@ -36,10 +36,7 @@ const ImageCarousel = ({ images }) => {
           </div>
         ))}
       </Carousel>
-      <div className="carousel-buttons">
-        <button onClick={handlePrevSlide}>Previous</button>
-        <button onClick={handleNextSlide}>Next</button>
-      </div>
+    
     </div>
   );
 };

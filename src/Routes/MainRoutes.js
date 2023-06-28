@@ -12,6 +12,8 @@ import FormCamera from '../Components/Create/FormCamera'
 import FormMobile from '../Components/Create/FormMobile'
 import FormLaptop from '../Components/Create/FormLaptop'
 import FormTablet from '../Components/Create/FormTablet'
+import Profile from '../Components/View/Profile'
+import ChatBox from '../Components/Chatbox/ChatBox'
 function MainRoutes() {
     return (
        <Router>
@@ -32,6 +34,12 @@ function MainRoutes() {
            </Route>
            <Route path="/viewmore">
                <ViewMore/>
+           </Route>
+           <Route path="/Profile">
+               <Profile/>
+           </Route>
+           <Route path="/Chat">
+               <ChatBox/>
            </Route>
            <Route path="/Car">
                <FormCar/>

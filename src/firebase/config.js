@@ -2,6 +2,8 @@ import firebase from 'firebase/compat/app'
 import 'firebase/compat/auth'
 import 'firebase/compat/firestore'
 import 'firebase/compat/storage'
+import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 
   const firebaseConfig = {
     apiKey: "AIzaSyDQJ-lEVObTeU0tMHZqOUKOyOGS5E2fDbk",
@@ -14,4 +16,8 @@ import 'firebase/compat/storage'
     measurementId: "G-XVCB8PRS7P"
   };
   export const Firebase= firebase.initializeApp(firebaseConfig)
-    
+  const db = getFirestore(Firebase);
+  const storage = getStorage(Firebase);
+  
+  export { db, storage };
+  

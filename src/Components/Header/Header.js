@@ -13,6 +13,8 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../contextStore/AuthContext";
 import { Firebase } from "../../firebase/config";
 import Search from "../Search/Search";
+import Profile from "../View/Profile";
+
 function Header() {
   const{allPost}=useContext(AllPostContext)
   const{setPostContent}=useContext(PostContext)
@@ -91,8 +93,9 @@ function Header() {
           <Arrow></Arrow>
         </div>
         <div className="loginPage">
+          {/* {console.log(user)} */}
           {user ? (
-            user.displayName
+            <Link to="/Profile"> {user.displayName}</Link>
           ) : (
             <Link to="/login">
               <span>Login</span>
