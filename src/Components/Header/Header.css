@@ -4,7 +4,7 @@
 }
 .headerParentDiv {
   padding: 10px;
-  background-color: rgb(232, 210, 44);
+  background-color: rgb(15, 104, 117);
   color: white;
   position: fixed;
   width: 100vw;
@@ -205,3 +205,10 @@
    background-color: #ebeeef;
  }
  
+ .searchIcon{
+  cursor: pointer;
+ }
+
+ .searchIcon:hover svg {
+  fill: rgba(17, 130, 243, 0.799);
+}

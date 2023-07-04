@@ -67,7 +67,7 @@ function Header() {
           value={wordEntered}
           onChange={handleFilter}
         />{filteredData.length === 0 ? (
-          <div onClick={handleEmptyClick}> <SearchIcon /> </div>
+          <div onClick={handleEmptyClick} className="searchIcon"> <SearchIcon /> </div>
          ) : (
            <div id="clearBtn"  onClick={clearInput} > <Arrow></Arrow></div>
          )}
