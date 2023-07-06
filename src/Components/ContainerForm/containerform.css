@@ -2,10 +2,31 @@
     top: 0%;
 
 }
-h1{
-    text-align: center;
-    margin: 20px;
-    font-size: 40px;
+.container-form-header{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    background-color: #555;
+    padding: 3px;
+}
+.container-form-header i{
+  margin-left: 40px;
+  color: white;
+  transform: 0.3s;
+}
+.container-form-header .logo{
+  margin-left: 350px;
+}
+.container-form-header .logo:hover{
+  cursor: pointer;
+}
+.container-form-header i:hover{
+  color: red;
+  cursor: pointer;
+}
+.container-form-header h1{
+      margin-left: 370px;
+      color: white;
 }
 .products{
     display: flex;
@@ -50,6 +71,10 @@ h1{
     color: black;
     text-decoration: none;
 }
+.product span:hover{
+  color: red;
+ 
+}
 .product i{
     margin-left: 20px;
     width: 25px;
@@ -59,6 +84,7 @@ h1{
 .product i:hover{
     color: red;
     text-decoration: none;
+    cursor: pointer;
 }
 /* dropdown */
 .dropdown {

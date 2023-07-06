@@ -1,15 +1,15 @@
-import React, { useContext,useState } from "react";
+import React, { useContext,useState ,useEffect} from "react";
 import { useHistory } from "react-router";
 import { AllPostContext } from "../../contextStore/AllPostContext";
 import { PostContext } from "../../contextStore/PostContext";
 import "./Header.css";
-
+import Img from "../../../src/assets/u.png";
 import OlxLogo from "../../assets/OlxLogo";
 import SearchIcon from "../../assets/SearchIcon"
 import Arrow from "../../assets/Arrow";
 import SellButton from "../../assets/SellButton";
 import SellButtonPlus from "../../assets/SellButtonPlus";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { AuthContext } from "../../contextStore/AuthContext";
 import { Firebase } from "../../firebase/config";
 import Search from "../Search/Search";
@@ -47,6 +47,22 @@ function Header() {
      alert("No items found.., please search by product name");
   }
   const { user } = useContext(AuthContext);
+  const [curuserDetails, setcurUserDetails] = useState();;
+ useEffect(()=>{
+  if (user) {
+    
+    const userId = user.uid;
+    Firebase.firestore()
+      .collection("users")
+      .where("id", "==", userId)
+      .get()
+      .then((res) => {
+        res.forEach((doc) => {
+          setcurUserDetails(doc.data());
+        });
+      });
+  }
+ },[user])
   
   const logoutHandler = () => {
     Firebase.auth()
@@ -61,53 +77,31 @@ function Header() {
         <div className="brandName">
           <OlxLogo></OlxLogo>
         </div>
-        <div className="placeSearch">
-          <input type="text" 
-          placeholder="Search specific product..."
-          value={wordEntered}
-          onChange={handleFilter}
-        />{filteredData.length === 0 ? (
-          <div onClick={handleEmptyClick}> <SearchIcon /> </div>
-         ) : (
-           <div id="clearBtn"  onClick={clearInput} > <Arrow></Arrow></div>
-         )}
-          {filteredData.length !== 0 && (
-        <div className="dataResult-header">
-          {filteredData.slice(0, 15).map((value, key) => {
-            return (
-              <div key={key} className="dataItem-header" onClick={()=>handleSelectedSearch(value)}>
-                <p>{value.name} </p>
-              </div>
-            );
-          })}
-        </div>
-      )}
-         
-        </div>
         <div className="productSearch">
-          <Search />
+          <Search/>
         </div>
-        
-        <div className="language">
-          <span> ENGLISH </span>
-          <Arrow></Arrow>
-        </div>
+        <div className="msg">   <Link 
+        to={{
+          pathname: '/Chat',
+          user: {curuserDetails} 
+          }} 
+        ><i className="fa-solid fa-message"></i></Link></div>
         <div className="loginPage">
-          {/* {console.log(user)} */}
-          {user ? (
-            <Link to="/Profile"> {user.displayName}</Link>
+          {curuserDetails ? (
+            <Link to="/Profile"> <img src={curuserDetails.avatar || Img} alt="avatar" />  {user.displayName}</Link>
           ) : (
             <Link to="/login">
               <span>Login</span>
             </Link>
           )}
-          <hr />
         </div>
+        <div className="Hlogout">
         {user && (
           <span onClick={logoutHandler} className="logout-span">
             Logout
           </span>
         )}
+        </div>
         
         <Link to="/create">
           {" "}

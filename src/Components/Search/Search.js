@@ -54,7 +54,6 @@ function Search() {
           onChange={handleFilter}
         />
         <div className="searchIcon">
-          
            <div onClick={handleSearchClick}> <SearchIcon /> </div>
            {filteredData.length !== 0 && (
             <div id="clearBtn"  onClick={clearInput} ><CloseIcon/></div>

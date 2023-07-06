@@ -6,7 +6,7 @@ import RoundLoading from "../Loading/RoundLoading";
 import "./Login.css";
 import video from '../../assets/video/mixkit-checking-an-item-on-a-sales-site-on-a-cell-42123-medium.mp4'
 
-function Login() {
+function Login() { 
   let [email, setEmail] = useState("");
   let [password, setPassword] = useState("");
   let [loading,setLoading]=useState(false)
