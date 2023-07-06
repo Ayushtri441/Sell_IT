@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Header from "../Header/Header";
 import { db, storage } from "../../firebase/config";
 import {
   collection,
@@ -18,6 +19,7 @@ import { ref, getDownloadURL, uploadBytes } from "firebase/storage";
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 import User from "./User";
 import Message from "./Message";
+import './chat.css'
 import MessageForm from "./MessageForm";
 const ChatBox = () => {
   const location = useLocation();
@@ -32,7 +34,7 @@ const ChatBox = () => {
   const [chat, setChat] = useState("");
   const user1 = curuserDetails.id;
   const product = curuserDetails.favorite_product_id;
-
+  
   useEffect(() => {
     
     let users = [];
@@ -140,6 +142,8 @@ const ChatBox = () => {
     setImg("");
   };
   return (
+    <>
+    <div className="chatheader"><Header></Header></div>
     <div className="home_container">
       <div className="users_container">
         {console.log(users)}
@@ -181,6 +185,7 @@ const ChatBox = () => {
         )}
       </div>
     </div>
+    </>
   );
 };
 

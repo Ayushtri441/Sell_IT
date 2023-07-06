@@ -195,6 +195,8 @@ const FormCar = () => {
             year,
             fuel,
             trans,
+            Milage,
+            Fcapacity,
             title,
             city,
             state,
