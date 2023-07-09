@@ -46,6 +46,9 @@ function View() {
     }
   }, [history, postContent]);
   // Create Favorte
+  const linktologin =()=>{
+    alert("Please Login to Chat With User")
+  }
   const checkIfProductExistsInFavorites = async (
     userId,
     collectionName,
@@ -77,7 +80,7 @@ function View() {
     return false;
   };
   useEffect(() => {
-    if (userDetails && postContent) {
+    if (userDetails && postContent && user) {
       checkIfProductExistsInFavorites(user.uid, "users", userDetails.id)
         .then((result) => {
           setIsProductInFavorites(result);
@@ -89,7 +92,7 @@ function View() {
     }
   }, [userDetails, postContent]);
   useEffect(() => {
-    if (userDetails && postContent) {
+    if (userDetails && postContent && user) {
       checkIfProductExistsInFavorites(userDetails.id, "users", user.uid)
         .then((result) => {
           setIsProductInFavorites(result);
@@ -108,13 +111,17 @@ function View() {
             images={postContent.imageUrls ? postContent.imageUrls : []}
           />
           <div className="chatwithuser">
-                <Link to={{
+               {curuserDetails ?( <Link to={{
       pathname: '/Chat',
       chat: {userDetails},
       user: {curuserDetails} 
       }} 
       >Chat With User
-    </Link>
+    </Link>):(
+      <Link to="/signup" onClick={linktologin} >Chat With User</Link>
+
+      
+    )}
             </div>
         </div>
 

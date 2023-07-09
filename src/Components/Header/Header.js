@@ -34,6 +34,9 @@ function Header() {
       setFilteredData(newFilter);
     }
   };
+  const linktologin =()=>{
+    alert("Login to chat With User")
+  }
   const clearInput = () => {
     setFilteredData([]);
     setWordEntered("");
@@ -80,14 +83,21 @@ function Header() {
         <div className="productSearch">
           <Search/>
         </div>
-        <div className="msg">   <Link 
+        <div className="msg"> 
+        {
+          curuserDetails ?(
+            <Link 
         to={{
           pathname: '/Chat',
           user: {curuserDetails} 
           }} 
-        ><i className="fa-solid fa-message"></i></Link></div>
+        ><i className="fa-solid fa-message"></i></Link>
+          ):(
+            <Link to="/login" onClick={linktologin}> <i className="fa-solid fa-message"></i></Link>
+          )
+        }  </div>
         <div className="loginPage">
-          {curuserDetails ? (
+          {curuserDetails && user ? (
             <Link to="/Profile"> <img src={curuserDetails.avatar || Img} alt="avatar" />  {user.displayName}</Link>
           ) : (
             <Link to="/login">
