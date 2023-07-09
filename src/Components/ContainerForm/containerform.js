@@ -1,11 +1,15 @@
 import React, { useState, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link , useHistory} from "react-router-dom";
+import OlxLogo from "../../assets/OlxLogo";
 import "./containerform.css";
-
 function Containerform() {
   const dropdownRefs = useRef([]);
   const [isOpen, setIsOpen] = useState([]);
-
+  const history = useHistory();
+  const state1 = {prop1: "Ayush", prop2:"Tripathi"}
+const navback=()=>{
+      history.goBack()
+}
   const handleMouseEnter = (index) => {
     const newIsOpen = [...isOpen];
     newIsOpen[index] = true;
@@ -18,17 +22,24 @@ function Containerform() {
     setIsOpen(newIsOpen);
   };
   const products = [
-    { icon: "fa-car", name: "Cars", component: "/Car", one:"Car" , two:"Truck"},
-    { icon: "fa-motorcycle", name: "Motorcycles", component: "/Bike" ,one:"Bike", two:"Cycle" },
-    { icon: "fa-mobile", name: "Mobiles", component: "/Mobile" ,one:"Moblie" , two:"Tablet"},
-    { icon: "fa-camera-retro", name: "Camera & Lenses", component: "/Camera",one:"Camera" , two:"Lenses" },
-    { icon: "fa-laptop", name: "Laptops and Computers", component: "/Laptop",one:"Laptops" , two:"Computers" },
-    { icon: "fa-tablet", name: "Others", component: "/Tablet",one:"Other"},
+    { icon: "fa-car", name: "4 Wheelers", component: "/Car", one:"Car" , two:"Truck", items :["Car","SUV","Truck"]},
+    { icon: "fa-motorcycle", name: "2 Wheelers", component: "/Bike" ,one:"Bike", two:"Cycle" ,items :["Bike","Cycle"] },
+    { icon: "fa-mobile", name: "Mobiles", component: "/Mobile" ,one:"Moblie" , two:"Tablet",items :["Smartphone","Tablet","Feature-Phone"]},
+    { icon: "fa-camera-retro", name: "Camera & Lenses", component: "/Camera",one:"Camera" , two:"Lenses",items :["Camera","Lenses","TV"] },
+    { icon: "fa-laptop", name: "Laptops and Computers", component: "/Laptop",one:"Laptops" , two:"Computers",items :["Laptop","Compurtes"] },
+    { icon: "fa-tablet", name: "Others", component: "/Others",one:"Other",items :["Furniture","Home-Applicences","Electric-Applicences"]},
   ];
+  const navhome =()=>{
+    history.push("/");
+  }
 
   return (
     <div className="main">
-      <h1>Select the Product</h1>
+      <div className="container-form-header">
+       <i className="fa-solid fa-arrow-left fa-xl" onClick={navback}></i>
+      <h1>Select a category</h1>
+      <div className="logo" onClick={navhome}> <OlxLogo></OlxLogo></div>
+      </div>
       <div className="products">
         {products.map((product, index) => (
           <div
@@ -47,9 +58,18 @@ function Containerform() {
                 className="dropdown-content"
                 
               >
-                <Link to={product.component}>{product.one}</Link>
-                <Link to="#">{product.two}</Link>
-                {/* <Link to="#">Item 3</Link> */}
+               {product.items.map((spec,index)=>{
+                    return (
+                      
+                <Link key={index} to={{
+                  pathname: product.component,
+                  state: { prop1: product.name, prop2: spec }
+                }}>{spec}</Link>
+                    )
+
+               })}
+               
+           
               </div>
                 </div>
             </div>

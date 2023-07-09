@@ -11,7 +11,7 @@ import FormBike from '../Components/Create/FormBike'
 import FormCamera from '../Components/Create/FormCamera'
 import FormMobile from '../Components/Create/FormMobile'
 import FormLaptop from '../Components/Create/FormLaptop'
-import FormTablet from '../Components/Create/FormTablet'
+import FormOther from '../Components/Create/FormOther'
 import Profile from '../Components/View/Profile'
 import ChatBox from '../Components/Chatbox/ChatBox'
 function MainRoutes() {
@@ -53,13 +53,11 @@ function MainRoutes() {
            <Route path="/LapTop">
                <FormLaptop/>
            </Route>
-           <Route path="/Bike">
-               <FormBike/>
-           </Route>
+        
            <Route path="/Camera">
                <FormCamera/>
-           </Route> <Route path="/Tablet">
-               <FormTablet/>
+           </Route> <Route path="/Others">
+               <FormOther/>
            </Route>
        </Router>
     )

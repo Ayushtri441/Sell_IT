@@ -4,12 +4,8 @@ import { onSnapshot, doc } from "firebase/firestore";
 import { db } from "../../firebase/config";
 
 const User = ({ user1, user, selectUser, chat }) => {
-  const user2 = user?.uid;
+  const user2 = user?.id;
   const [data, setData] = useState("");
-{console.log(user1)
-console.log(user)
-console.log(selectUser)
-console.log(chat)}
   useEffect(() => {
     const id = user1 > user2 ? `${user1 + user2}` : `${user2 + user1}`;
     let unsub = onSnapshot(doc(db, "lastMsg", id), (doc) => {

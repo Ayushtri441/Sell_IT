@@ -34,10 +34,12 @@ const Profile = () => {
           setUserDetails(doc.data());
         });
       });
+   
     }
   // console.log(userDetails)
   useEffect(() => {
- 
+    {console.log(user)}
+    {console.log(userDetails)}
     if (img) {
       const uploadImg = async () => {
         const imgRef = ref(
@@ -45,8 +47,8 @@ const Profile = () => {
           `avatar/${new Date().getTime()} - ${img.name}`
         );
         try {
-          if (user.avatarPath) {
-            await deleteObject(ref(storage, user.avatarPath));
+          if (userDetails.avatarPath) {
+            await deleteObject(ref(storage, userDetails.avatarPath));
           }
           const snap = await uploadBytes(imgRef, img);
           const url = await getDownloadURL(ref(storage, snap.ref.fullPath));
@@ -70,12 +72,13 @@ const Profile = () => {
     try {
       const confirm = window.confirm("Delete avatar?");
       if (confirm) {
-        await deleteObject(ref(storage, user.avatarPath));
+        await deleteObject(ref(storage, userDetails.avatarPath));
 
-        await updateDoc(doc(db, "users", user), {
+        await updateDoc(doc(db, "users", user.uid), {
           avatar: "",
           avatarPath: "",
         });
+        setImg("");
         history.replace("/");
       }
     } catch (err) {
@@ -91,9 +94,9 @@ const Profile = () => {
           <div className="overlay">
             <div>
               <label htmlFor="photo">
-                <Camera />
+                <Camera/>
               </label>
-              {user.avatar ? <Delete deleteImage={deleteImage} /> : null}
+              {userDetails.avatar ? <Delete deleteImage={deleteImage} /> : null}
               <input
                 type="file"
                 accept="image/*"

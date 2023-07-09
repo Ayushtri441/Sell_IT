@@ -1,6 +1,5 @@
-
 import React, { useEffect, useState } from "react";
-import { db,  storage } from "../../firebase/config";
+import { db, storage } from "../../firebase/config";
 import {
   collection,
   query,
@@ -18,58 +17,78 @@ import { Firebase } from "../../firebase/config";
 import { ref, getDownloadURL, uploadBytes } from "firebase/storage";
 import { useLocation } from "react-router-dom/cjs/react-router-dom.min";
 import User from "./User";
-import Message from './Message';
-import MessageForm from './MessageForm';
+import Message from "./Message";
+import MessageForm from "./MessageForm";
 const ChatBox = () => {
   const location = useLocation();
-  const  curuserDetails = location.user.curuserDetails;
-  const  userDetails  = location.chat.userDetails;
+  const curuserDetails = location.user.curuserDetails;
+  let userDetails;
+  if(location.chat!==undefined && location.chat.userDetails) userDetails = location.chat.userDetails;
 
-    const [users, setUsers] = useState([]);
-    const [text, setText] = useState("");
-    const [img, setImg] = useState("");
-    const [msgs, setMsgs] = useState([]);
-    const [chat, setChat] = useState("");
-    const user1 = curuserDetails.id;
-    const product =curuserDetails.favorite_product_id;
-    // {console.log(curuserDetails)
-    // console.log(product)}
+  const [users, setUsers] = useState([]);
+  const [text, setText] = useState("");
+  const [img, setImg] = useState("");
+  const [msgs, setMsgs] = useState([]);
+  const [chat, setChat] = useState("");
+  const user1 = curuserDetails.id;
+  const product = curuserDetails.favorite_product_id;
+
   useEffect(() => {
-    // {console.log(userDetails)}
+    
     let users = [];
-    for(let i=0;i<product.length;i++){
-      const userId = product[i];
-      Firebase.firestore()
-        .collection("users")
-        .where("id", "==", userId)
-        .get()
-        .then((res) => {
-          res.forEach((doc) => {
-            users.push(doc.data());
-          });
+    let isUnmounted = false;
+  
+    const fetchUsers = async () => {
+      const promises = product.map((userId) =>
+        Firebase.firestore()
+          .collection("users")
+          .where("id", "==", userId)
+          .get()
+      );
+  
+      const snapshots = await Promise.all(promises);
+  
+     snapshots.forEach((snapshot) => {
+        snapshot.forEach((doc) => {
+         if(!isUnmounted) users.push(doc.data());
         });
-    }
-    
-            setUsers(users)
-            // {console.log(users)}
+      });
+  
+    if(!isUnmounted)  setUsers(users);
+    };
+  
+   if(userDetails===undefined) fetchUsers();
+   else{
+    if(!isUnmounted){ users.push(userDetails);  setUsers(users);}
+   }
+  
+    return () => {  
+        isUnmounted = true;
+    };
   }, []);
-
+  
   const selectUser = async (user) => {
+    {
+      console.log(user);
+    }
     setChat(user);
-    {console.log(users)}
+
+    // {console.log(users)}
     const user2 = user.id;
-    
+
     const id = user1 > user2 ? `${user1 + user2}` : `${user2 + user1}`;
 
     const msgsRef = collection(db, "messages", id, "chat");
     const q = query(msgsRef, orderBy("createdAt", "asc"));
-   
+
     onSnapshot(q, (querySnapshot) => {
       let msgs = [];
       querySnapshot.forEach((doc) => {
         msgs.push(doc.data());
       });
-     
+      {
+        console.log(msgs);
+      }
       setMsgs(msgs);
     });
 
@@ -87,7 +106,8 @@ const ChatBox = () => {
     const user2 = chat.id;
 
     const id = user1 > user2 ? `${user1 + user2}` : `${user2 + user1}`;
-    {console.log(user1+" "+user2)}
+    // {console.log(user1+" "+user2)}
+
     let url;
     if (img) {
       const imgRef = ref(
@@ -121,18 +141,20 @@ const ChatBox = () => {
   };
   return (
     <div className="home_container">
-         <div className="users_container">
-          {console.log(users)}
-        {users.map((user) => (
-          <User
-            key={user.id}
-            user={user}
-            selectUser={selectUser}
-            user1={user1}
-            chat={chat}
-          />
-          
-        ))}
+      <div className="users_container">
+        {console.log(users)}
+        {users.map((user,index) => {
+          console.log(user);
+          return (
+            <User
+              key={index}
+              user={user}
+              selectUser={selectUser}
+              user1={user1}
+              chat={chat}
+            />
+          );
+        })}
       </div>
       <div className="messages_container">
         {chat ? (
@@ -162,4 +184,4 @@ const ChatBox = () => {
   );
 };
 
-export default ChatBox
+export default ChatBox;

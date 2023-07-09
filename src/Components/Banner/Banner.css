@@ -13,15 +13,40 @@
   margin-right: 16px;
   font-weight: bolder;
 }
+.categoryMenu select{
+  width: 200px;
+  height: 30px;
+  font-size: 18px;
+  border-radius: 10px;
+  padding-left: 20px;
+  border:  2px solid black;
+}
+.categoryMenu option{
+      width: 200px;
+      height: 30px;
+      background-color: #555;
+      font-size: 20px;
+      padding: 3px;
+      color: white;
+}
 
 
 .bannerParentDiv .bannerChildDiv .menuBar .otherQuickOptions span {
   padding: 10px;
+  font-size: 18px;
+  color: black;
+  margin-left: 20px;
 }
+.bannerParentDiv .bannerChildDiv .menuBar .otherQuickOptions span:hover {
+  
+  color: red;
+
+}
+
 
 .bannerChildDiv .banner {
   position: relative;
-  width: 100vw;
+  width: 100%;
 }
 .bannerChildDiv .banner img{
   width: 100vw;
@@ -38,5 +63,4 @@
 
 .otherQuickOptions span{
   cursor: pointer;
-  
 }
