@@ -46,6 +46,9 @@ function View() {
     }
   }, [history, postContent]);
   // Create Favorte
+  const linktologin =()=>{
+    alert("Please Login to Chat With User")
+  }
   const checkIfProductExistsInFavorites = async (
     userId,
     collectionName,
@@ -77,7 +80,7 @@ function View() {
     return false;
   };
   useEffect(() => {
-    if (userDetails && postContent) {
+    if (userDetails && postContent && user) {
       checkIfProductExistsInFavorites(user.uid, "users", userDetails.id)
         .then((result) => {
           setIsProductInFavorites(result);
@@ -89,7 +92,7 @@ function View() {
     }
   }, [userDetails, postContent]);
   useEffect(() => {
-    if (userDetails && postContent) {
+    if (userDetails && postContent && user) {
       checkIfProductExistsInFavorites(userDetails.id, "users", user.uid)
         .then((result) => {
           setIsProductInFavorites(result);
@@ -107,6 +110,19 @@ function View() {
           <ImageCarousel
             images={postContent.imageUrls ? postContent.imageUrls : []}
           />
+          <div className="chatwithuser">
+               {curuserDetails ?( <Link to={{
+      pathname: '/Chat',
+      chat: {userDetails},
+      user: {curuserDetails} 
+      }} 
+      >Chat With User
+    </Link>):(
+      <Link to="/signup" onClick={linktologin} >Chat With User</Link>
+
+      
+    )}
+            </div>
         </div>
 
         <div className="rightSection">
@@ -115,6 +131,7 @@ function View() {
             <p>Brand :-{postContent.brand} </p>
             <span>{postContent.name}</span>
             <p>{postContent.category}</p>
+            <p>{postContent.spec}</p>
             <span>{postContent.createdAt}</span>
           </div>
           <div className="productDescription">
@@ -122,9 +139,11 @@ function View() {
             <p>{postContent.description}</p>
             <p>{postContent.title}</p>
             <p>Year :- {postContent.year}</p>
-            <p>Transmission :- {postContent.trans}</p>
-            <p>Model :- {postContent.model}</p>
-            <p>Fuel :- {postContent.fuel}</p>
+            <p>- {postContent.trans}</p>
+            <p>- {postContent.model}</p>
+            <p>- {postContent.fuel}</p>
+            <p>- {postContent.milage}</p>
+            <p>- {PostContext.fcapacity}</p>
           </div>
           {userDetails && (
             <div className="contactDetails">
@@ -143,13 +162,7 @@ function View() {
         </div>
       </div>
      
-        <Link to={{
-      pathname: '/Chat',
-      chat: {userDetails},
-      user: {curuserDetails} 
-      }} 
-      >Chat With User
-    </Link>
+            
       
     </>
   );

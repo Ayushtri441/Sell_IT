@@ -34,6 +34,9 @@ function Header() {
       setFilteredData(newFilter);
     }
   };
+  const linktologin =()=>{
+    alert("Login to chat With User")
+  }
   const clearInput = () => {
     setFilteredData([]);
     setWordEntered("");
@@ -75,45 +78,26 @@ function Header() {
     <div className="headerParentDiv">
       <div className="headerChildDiv">
         <div className="brandName">
-          <OlxLogo></OlxLogo>
+          <Link to="/"><OlxLogo></OlxLogo></Link>
         </div>
-<<<<<<< Updated upstream
-        <div className="placeSearch">
-          <input type="text" 
-          placeholder="Search specific product..."
-          value={wordEntered}
-          onChange={handleFilter}
-        />{filteredData.length === 0 ? (
-          <div onClick={handleEmptyClick} className="searchIcon"> <SearchIcon /> </div>
-         ) : (
-           <div id="clearBtn"  onClick={clearInput} > <Arrow></Arrow></div>
-         )}
-          {filteredData.length !== 0 && (
-        <div className="dataResult-header">
-          {filteredData.slice(0, 15).map((value, key) => {
-            return (
-              <div key={key} className="dataItem-header" onClick={()=>handleSelectedSearch(value)}>
-                <p>{value.name} </p>
-              </div>
-            );
-          })}
-        </div>
-      )}
-         
-        </div>
-=======
->>>>>>> Stashed changes
         <div className="productSearch">
           <Search/>
         </div>
-        <div className="msg">   <Link 
+        <div className="msg"> 
+        {
+          curuserDetails ?(
+            <Link 
         to={{
           pathname: '/Chat',
           user: {curuserDetails} 
           }} 
-        ><i className="fa-solid fa-message"></i></Link></div>
+        ><i className="fa-solid fa-message"></i></Link>
+          ):(
+            <Link to="/login" onClick={linktologin}> <i className="fa-solid fa-message"></i></Link>
+          )
+        }  </div>
         <div className="loginPage">
-          {curuserDetails ? (
+          {curuserDetails && user ? (
             <Link to="/Profile"> <img src={curuserDetails.avatar || Img} alt="avatar" />  {user.displayName}</Link>
           ) : (
             <Link to="/login">

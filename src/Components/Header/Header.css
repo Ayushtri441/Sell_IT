@@ -1,11 +1,6 @@
 
 .headerParentDiv {
-<<<<<<< Updated upstream
-  padding: 10px;
-  background-color: rgb(15, 104, 117);
-=======
   background-color: #555;
->>>>>>> Stashed changes
   color: white;
   position: fixed;
   width: 100%;
@@ -150,17 +145,6 @@
  .dataResult-header  :hover {
    background-color: #ebeeef;
  }
-<<<<<<< Updated upstream
- 
  .searchIcon{
   cursor: pointer;
  }
-
- .searchIcon:hover svg {
-  fill: rgba(17, 130, 243, 0.799);
-}
-=======
- .searchIcon{
-  cursor: pointer;
- }
->>>>>>> Stashed changes

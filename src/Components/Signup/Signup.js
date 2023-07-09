@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import reactRouterDom, { Link } from "react-router-dom";
 import Logo from "../../olx-logo.png";
 import "./Signup.css";
 import { Firebase } from "../../firebase/config";
@@ -24,6 +24,12 @@ export default function Signup() {
   };
   const handleSubmit = (e) => {
     setLoading(true)
+    let btn = document.getElementById("btn")
+    btn.disabled = true;
+    let main = document.getElementById("main");
+    let video = document.getElementById('video');
+    main.style.opacity= "0.1";
+    video.style.display="none"
     e.preventDefault();
     Firebase.auth()
       .createUserWithEmailAndPassword(email, password)
@@ -39,7 +45,15 @@ export default function Signup() {
       })
       .then(() => {
         history.push("/login");
-      });
+      }).catch((error)=>{
+        alert(error);
+        setLoading(false)
+        btn.disabled = false;
+        
+        main.style.opacity= "1";
+        video.style.display="block"
+        
+      })
   };
   return (<>
     {loading && <SignUpLoading/> } <div>
@@ -119,7 +133,7 @@ export default function Signup() {
           />
           <div/>
          
-          <button>Signup</button>
+          <button id="btn">Signup</button>
         </form>
         <Link to="/login">Login</Link>
       </div>

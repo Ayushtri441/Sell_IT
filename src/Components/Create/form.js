@@ -195,6 +195,8 @@ const FormCar = () => {
             year,
             fuel,
             trans,
+            Milage:Milage,
+            Fcapacity:Fcapacity,
             title,
             city,
             state,
@@ -233,7 +235,7 @@ const FormCar = () => {
         </div>
       </div>
       <div className="container p-0">
-        <h2 className="text-center">Post Your Ad</h2>
+        <h2 className="text-center" >Post Your Ad</h2>
         <div className="text-center">
           Fill out the form below to submit your Add Details!
         </div>
