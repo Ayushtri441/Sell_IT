@@ -142,8 +142,8 @@ function View() {
             <p>- {postContent.trans}</p>
             <p>- {postContent.model}</p>
             <p>- {postContent.fuel}</p>
-            <p>- {postContent.milage}</p>
-            <p>- {PostContext.fcapacity}</p>
+            <p>- {postContent.Milage}</p>
+            <p>- {postContent.Fcapacity}</p>
           </div>
           {userDetails && (
             <div className="contactDetails">

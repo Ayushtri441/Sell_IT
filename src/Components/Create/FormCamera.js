@@ -217,6 +217,8 @@ const FormCamera = () => {
             city,
             state,
             category,
+            Milage:Milage,
+            Fcapacity:Fcapacity,
             price,
             description,
             imageUrls,
@@ -230,7 +232,7 @@ const FormCamera = () => {
               alert("Form Submitted SucessFully");
               form.reset();
               history.push("/");
-            }, 10000);
+            }, 1000);
           });
       })
       .catch((error) => {

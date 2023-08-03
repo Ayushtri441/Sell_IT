@@ -210,6 +210,8 @@ const FormOther = () => {
             price,
             description,
             imageUrls,
+            Milage:Milage,
+            Fcapacity:Fcapacity,
             userId: user.uid,
             createdAt: date,
           })
@@ -220,7 +222,7 @@ const FormOther = () => {
               alert("Form Submitted SucessFully");
               form.reset();
               history.push("/");
-            }, 10000);
+            }, 1000);
           });
       })
       .catch((error) => {

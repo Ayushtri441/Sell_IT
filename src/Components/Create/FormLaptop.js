@@ -214,6 +214,8 @@ const FormLaptop = () => {
             city,
             state,
             category,
+            Milage:Milage,
+            Fcapacity:Fcapacity,
             price,
             description,
             imageUrls,
@@ -227,7 +229,7 @@ const FormLaptop = () => {
               alert("Form Submitted SucessFully");
               form.reset();
               history.push("/");
-            }, 10000);
+            }, 1000);
           });
       })
       .catch((error) => {

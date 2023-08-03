@@ -199,6 +199,8 @@ const FormBike = () => {
             title,
             city,
             state,
+            Milage:Milage,
+            Fcapacity:Fcapacity,
             category,
             price,
             description,
@@ -213,7 +215,7 @@ const FormBike = () => {
               alert("Form Submitted SucessFully");
               form.reset();
               history.push("/");
-            }, 10000);
+            }, 1000);
           });
       })
       .catch((error) => {
