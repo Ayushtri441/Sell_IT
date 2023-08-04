@@ -54,18 +54,19 @@ def recommand_product(data:ProductName):
     data = data.dict()
     product_name=data['name']
     list_of_all_products = products_data['car_name'].tolist()
-  
+    a=[]
     find_close_match = difflib.get_close_matches(product_name, list_of_all_products)
     if not find_close_match:
-        return "No Elements"
+        return {
+            "data":a
+            }
+
     close_match = find_close_match[0]
     index_of_the_product = products_data.loc[products_data.car_name.str.contains(close_match)].index[0]
     similarity_score = list(enumerate(similarity[index_of_the_product]))
     sorted_similar_product = sorted(similarity_score, key = lambda x:x[1], reverse = True)
-
-
+    
     i = 1
-    a = []
     
     for product in sorted_similar_product:
         index = product[0]
@@ -75,7 +76,7 @@ def recommand_product(data:ProductName):
             i+=1
     print(a)
     return {
-        'Sugessted Prouctds for You'  :a
+        "data":a
         }
 
 

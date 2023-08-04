@@ -24,6 +24,12 @@
   width: 400px;
 
 }
+.productSearchMl {
+  height: 38px;
+  margin-left: 10px;
+  width: 400px;
+
+}
 .searchIcon svg{
   fill: black;
   transition: 0.4s;
@@ -33,7 +39,7 @@
   transition: 0.4s;
 }
 .headerChildDiv .msg{
-  margin-left: 220px;
+  margin-left: 60px;
   width: 20px;
 }
 .headerChildDiv .msg i{
@@ -46,12 +52,16 @@
 }
 .loginPage  {
   margin-left: 50px;
-  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 }
 
 .loginPage a{
   color: white;
   text-decoration: none;
+  width: 150px;
   font-size: 20px;
   transition: 0.3s;
 }
@@ -65,9 +75,12 @@
         height: 38px;
         transition: 0.1 ease;
 }
+.loginPage span{
+color: white;
+margin: 10px;
+}
 
 .Hlogout{
-  margin-left: 50px;
   width: 80px;
 }
 .Hlogout span{

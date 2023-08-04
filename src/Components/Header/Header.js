@@ -13,7 +13,8 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { AuthContext } from "../../contextStore/AuthContext";
 import { Firebase } from "../../firebase/config";
 import Search from "../Search/Search";
-import Profile from "../View/Profile";
+import SearchML from "../Search_ML/Search_ML";
+
 
 function Header() {
   const{allPost}=useContext(AllPostContext)
@@ -83,6 +84,9 @@ function Header() {
         <div className="productSearch">
           <Search/>
         </div>
+        <div className="productSearchMl">
+        <SearchML/>
+        </div>
         <div className="msg"> 
         {
           curuserDetails ?(
@@ -98,7 +102,7 @@ function Header() {
         }  </div>
         <div className="loginPage">
           {curuserDetails && user ? (
-            <Link to="/Profile"> <img src={curuserDetails.avatar || Img} alt="avatar" />  {user.displayName}</Link>
+            <Link to="/Profile"> <img src={curuserDetails.avatar || Img} alt="avatar" /> <span>{user.displayName}</span> </Link>
           ) : (
             <Link to="/login">
               <span>Login</span>

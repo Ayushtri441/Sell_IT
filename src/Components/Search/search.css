@@ -3,7 +3,7 @@
 }
 .searchInputs {
     display: flex;
-    width: 400px;
+    width: 300px;
     background-color: white;
     border: 2px solid black;
     border-radius: 14px;
@@ -34,6 +34,7 @@
   .searchIcon svg {
     font-size: 35px;
     color: white;
+  
   }
   
   .dataResult {
@@ -71,7 +72,9 @@
   
   #clearBtn {
     cursor: pointer;
-    /* position: absolute;
-    top: 0; */
+    position: absolute;
+    top: -1px;
+    left: 440px;
     
   }
+ 

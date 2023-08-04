@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import reactRouterDom, { Link } from "react-router-dom";
-import Logo from "../../olx-logo.png";
 import "./Signup.css";
 import { Firebase } from "../../firebase/config";
 import { useHistory } from "react-router";
