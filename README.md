@@ -27,10 +27,28 @@ To set up and run the OldProductSeller App locally, follow these steps:
 
 
 
+
 ## ML model
 
-1. **Run .ipynb**  : Run ipynb file in jupiter notebook save pickle file
+1. **Unspervised Text classification model** : Text classification model to test and train dataset .Classified based on features most related to given product.
+2. **Run .ipynb**  : Run ipynb file in jupiter notebook save pickle file
 
-2. **Fast API** : Test and run ML model Using Fast APi
+3. **Fast API** : Test and run ML model Using Fast API
 
-3. **Run Server** : To access API run server in localhost
+4. **Run Server** : To access API run server in localhost using **uvicorn**
+
+
+ ## Video
+Demo Video [Click me](https://drive.google.com/file/d/1esOCw0qnTF96OqumyhQ8ZQ29DvJkFxNA/view?usp=sharing)
+
+
+## APPLICATION DISPLAY  :eyes:	
+![Screenshot 2023-08-04 110525](https://github.com/Ayushtri441/ayush/assets/113000672/2a29be2a-f1e0-4ad3-ab19-bfb6d4476c38)
+![Screenshot 2023-08-05 145726](https://github.com/Ayushtri441/ayush/assets/113000672/a1c27ad6-7177-46c7-b5fa-84aa636126f8)
+![Screenshot 2023-08-05 145554](https://github.com/Ayushtri441/ayush/assets/113000672/31a9a747-57cc-4b78-a002-3b1386d2d861)
+
+
+
+
+
+
